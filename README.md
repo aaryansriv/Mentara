@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Perplexity Clone
 
-## Getting Started
+A powerful AI-powered search and Q&A application inspired by [Perplexity.ai](https://www.perplexity.ai), built using **Next.js** on the frontend and integrated with an **Ingest pipeline** for intelligent data processing and retrieval.
 
-First, run the development server:
+---
 
+## 🚀 Features
+
+- 🧠 Ask natural language questions and get intelligent answers
+- 📄 Ingest documents for personalized knowledge retrieval (PDF, CSV, etc.)
+- 🔎 Context-aware search powered by embeddings
+- ⚡ Fast, modern UI built with **Next.js**
+- 🗂️ Multi-document support and scalable architecture
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer        | Technology        |
+|--------------|-------------------|
+| Frontend     | Next.js, Tailwind CSS |
+| Backend      | FastAPI / Node.js (optional) |
+| Vector DB    | FAISS / ChromaDB |
+| Embeddings   | OpenAI / Gemini / HuggingFace |
+| Ingestion    | Custom pipeline using `Ingest` scripts |
+| Hosting      | Vercel / Render / Railway (planned) |
+
+---
+
+## 📂 Folder Structure
+
+perp-clone/
+├── pages/ # Next.js pages
+├── components/ # Reusable UI components
+├── public/ # Static assets
+├── utils/ # Ingest, embeddings, and helper functions
+├── styles/ # Tailwind/global CSS
+├── ingest/ # Document upload & processing scripts
+└── README.md
+
+yaml
+Copy
+Edit
+
+---
+
+## 🧪 Local Development
+
+### 1. Clone the repo
 ```bash
+git clone https://github.com/yourusername/perp-clone.git
+cd perp-clone
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Run the development server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+App will be available at http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📥 Document Ingestion (Manual / API)
+Add your documents to /ingest or use an upload UI (if implemented). Each document is embedded and stored in a vector DB for contextual Q&A.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🧠 How It Works (Architecture Overview)
+User asks a question
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Question is embedded using an LLM (e.g. OpenAI/Gemini)
 
-## Learn More
+Similar documents are retrieved via vector search (FAISS/ChromaDB)
 
-To learn more about Next.js, take a look at the following resources:
+A response is generated using context-aware generation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Response is shown in the UI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+✅ TODOs
+ Add user login and history
 
-## Deploy on Vercel
+ Document upload interface
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ LangGraph or LangChain agent support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ Email conversation feature
+
+ Deploy to production
+
+📄 License
+MIT License. Feel free to fork, contribute, or use as a base for your own RAG apps.
+
+🙌 Acknowledgements
+Perplexity.ai for inspiration
+
+LangChain for tooling
+
+OpenAI / Google Gemini for LLM APIs
+
+yaml
+Copy
+Edit
+
+---
+
+Let me know if your **backend is FastAPI**, or you want a **badge style README with images**, or deployment info (e.g., Vercel or Railway). I’ll adapt it accordingly.
